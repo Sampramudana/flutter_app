@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:toast/toast.dart';
 import 'dart:convert';
-
-import 'model/superheroitem.dart';
 import 'ui/listsuperhero.dart';
+import 'model/superheroitem.dart';
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -66,14 +66,14 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (BuildContext context, int position) {
               SuperHeroItem superHeroItem = SuperHeroItem.fromJson(responseListData[position]);
               return ListSuperHero(
-                id: dataSuperHero.id,
-                name: dataSuperHero.name,
-                image: dataSuperHero.image.sn,
-                by: dataSuperHero.biography.publisher,
-                fullname: dataSuperHero.biography.fullname,
-                gender: dataSuperHero.appeareance.gender,
-                hair: dataSuperHero.appeareance.hairColor,
-                race: dataSuperHero.appeareance.race,
+                id: superHeroItem.id,
+                name: superHeroItem.name,
+                image: superHeroItem.images.sm,
+                by: superHeroItem.biography.publisher,
+                fullname: superHeroItem.biography.fullName,
+                gender: superHeroItem.appearance.gender,
+                hair: superHeroItem.appearance.hairColor,
+                race: superHeroItem.appearance.race,
               );
             },
           ) : CircularProgressIndicator(),

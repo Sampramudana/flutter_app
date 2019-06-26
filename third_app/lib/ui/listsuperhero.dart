@@ -12,7 +12,7 @@ class ListSuperHero extends StatelessWidget {
   var by;
   var race;
 
-  ListSuperHero(Key key, this.id, this.name, this.fullname, this.gender, this.image, this.hair, this.by, this.race);
+  ListSuperHero({Key key, this.id, this.name, this.fullname, this.gender, this.image, this.hair, this.by, this.race}):super(key:key)  ;
 
   @override
   Widget build(BuildContext context) {
