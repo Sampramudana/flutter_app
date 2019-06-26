@@ -65,7 +65,16 @@ class _MyHomePageState extends State<MyHomePage> {
             itemCount: responseListData == null ? 0 : responseListData.length,
             itemBuilder: (BuildContext context, int position) {
               SuperHeroItem superHeroItem = SuperHeroItem.fromJson(responseListData[position]);
-              return ListSuperHero();
+              return ListSuperHero(
+                id: dataSuperHero.id,
+                name: dataSuperHero.name,
+                image: dataSuperHero.image.sn,
+                by: dataSuperHero.biography.publisher,
+                fullname: dataSuperHero.biography.fullname,
+                gender: dataSuperHero.appeareance.gender,
+                hair: dataSuperHero.appeareance.hairColor,
+                race: dataSuperHero.appeareance.race,
+              );
             },
           ) : CircularProgressIndicator(),
         ),
